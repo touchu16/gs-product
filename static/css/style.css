@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.cf:after{
+  content: ".";
+  display: block;
+  height: 0;
+  font-size:0;
+  clear: both;
+  visibility:hidden;
+}
+
+/* クリアフィックス */
+.cf{display: inline-block;}
+/* Hides from IE Mac \*/
+* html .cf {height: 1%;}
+.cf{display:block;}
+/* End Hack */
+
+/* CSSここから記述↓ */
+
+body{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color:whitesmoke
+	
+}
+
+#header{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.88, #3fd94b), color-stop(0.00, #3fd976));
+	background: -webkit-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -moz-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -o-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -ms-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: linear-gradient(to bottom, #3fd976 0%, #3fd94b 88%);
+
+	height: 53px;
+	position :relative;
+	border-radius: 30px 30px 30px 30px;
+	margin: 5px 10px;
+}
+
+#header h1{
+	text-align: center;
+	padding-top: 15px;
+	font-size:  28px;
+	color: aliceblue;
+
+}
+
+#header h1 a {
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+
+}
+
+p#nav_btn {
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+
+p#nav_btn{
+	display: block;
+	width:53px;
+	height: 38px;
+	text-align: center;
+	padding-top:15px;
+
+}
+
+canvas{
+	max-width:100%;
+}
+
+label{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.88, #3fd94b), color-stop(0.00, #3fd976));
+	background: -webkit-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -moz-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -o-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -ms-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: linear-gradient(to bottom, #3fd976 0%, #3fd94b 88%);
+	display: block;
+	color: white;  
+  	margin: 5px 10px;
+	border-radius: 30px;
+	line-height: 40px;  
+	text-align: center;
+	font-size: 20px;
+}
+
+.prediction{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.88, #3fd94b), color-stop(0.00, #3fd976));
+	background: -webkit-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -moz-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -o-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: -ms-linear-gradient(top, #3fd976 0%, #3fd94b 88%);
+	background: linear-gradient(to bottom, #3fd976 0%, #3fd94b 88%);
+	display: block;
+	color: white;  
+  	margin: 5px 10px;
+	border-radius: 30px;
+	line-height: 40px;  
+	text-align: center;
+	font-size: 20px;
+}
+
+.camera-btn{
+	text-align: center;
+}
+.mycolor2{
+	color: mediumseagreen;
+}
+
+#gallery{
+	border-bottom: 1px solid mediumseagreen;
+	height: 53px;
+	position :relative;
+	margin: 5px 10px;
+}
+
+#gallery h2{
+	text-align: center;
+	padding-top: 15px;
+	font-size:  28px;
+	color: mediumseagreen;
+}
+
+p#gal_icon {
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+
+p#gal_icon{
+	display: block;
+	width:53px;
+	height: 38px;
+	text-align: center;
+	padding-top:12px;
+
+}
+
+.mycolor{
+	color: mediumseagreen;
+}
+.file input{
+  display:none;
+}
+.file{
+  cursor:pointer;
+}
+
+.take_photos{
+	text-align: center;
+	padding-top: 15px;
+	font-size:  28px;
+	color: mediumseagreen;
+	border-bottom: 1px solid mediumseagreen;
+	margin: 5px 10px;
+}

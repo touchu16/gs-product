@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>SmartAgri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/static/css/style.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="#"></a>
+            SmartAgri
+        </h1>
+        <p id="nav_btn">
+            <a href="#">
+                <img src="header-menu.png" width="23">
+            </a>
+        </p>
+    </header>
+    <canvas id='canvas' width='350' height='350'></canvas>
+    <form action="upload">
+        <label for="chooser">
+            Let's take a photo!!
+            <input id="chooser" type="file" accept="image/*" style="display:none" ;>
+        </label>
+    </form>
+    <div class="prediction">
+        <h2>predict</h2>
+        <a href="#"></a>
+
+    </div>
+</body>
+<script>
+
+    // canvas要素に描画するためのお決まりの2行
+    var canvas = document.getElementById("canvas");        // canvas 要素の取得
+    var context = canvas.getContext("2d");
+    var canvasWidth = canvas.width;
+    var canvasHeight = canvas.height;
+    var canvasAspect = canvasWidth / canvasHeight;                 // 描画用部品を取得
+
+    // ファイルを読む（カメラを使う）準備
+    var chooser = document.getElementById("chooser");       // ファイル選択用 input 要素の取得
+    var reader = new FileReader();                         // ファイルを読む FileReader オブジェクトを作成
+    var img = new Image();                              // 画像を入れておく Image オブジェクトを作成
+    // ファイルを読み込む処理
+    chooser.addEventListener("change", () => {              // ファイル選択ダイアログの値が変わったら
+        var file = chooser.files[0];                        // ファイル名取得
+        reader.readAsDataURL(file);                         // FileReader でファイルを読み込む
+    });
+    reader.addEventListener("load", () => {                 // FileReader がファイルの読み込みを完了したら
+        img.src = reader.result;                          // Image オブジェクトに読み込み結果を入れる
+    });
+    img.addEventListener("load", () => {                 // Image オブジェクトに画像が入ったら
+        var imgWidth = img.width;
+        var imgHeight = img.height;
+        var imgAspect = imgWidth / imgHeight;
+        var imgPos = 0;
+
+
+        if (imgAspect >= 1) {//画像が横長の時
+            imgPos = (350 - (350 * imgAspect)) / 2; //横方向の画像位置を計算
+            context.drawImage(img, imgPos, 0, 350 * imgAspect, 350);
+        } else { //画像が縦長の時
+            imgPos = (350 - (350 * imgAspect)) / 2; //縦方向の画像位置を計算
+            context.drawImage(img, 0, imgPos, 350, 350 / imgAspect);           // 画像を canvas に描く（Image, Left, Top, Width, Height）
+        }
+
+    });
+
+</script>
+
+</html>
